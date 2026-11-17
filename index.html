@@ -1,277 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Digital Portfolio</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6fa;
-            color: #263238;
-            line-height: 1.7;
-        }
-
-        header {
-            background-color: #17365d;
-            color: white;
-            text-align: center;
-            padding: 55px 20px;
-        }
-
-        header h1 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
-
-        nav {
-            background-color: #102744;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 8px 12px;
-            display: inline-block;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #9ed8ff;
-        }
-
-        main {
-            max-width: 950px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        section {
-            background-color: white;
-            margin-bottom: 25px;
-            padding: 28px;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px #0000000d;
-            scroll-margin-top: 90px;
-        }
-
-        h2 {
-            color: #17365d;
-            border-bottom: 2px solid #dce7f4;
-            padding-bottom: 10px;
-        }
-
-        .highlight {
-            color: #456b91;
-            font-weight: bold;
-        }
-
-        footer {
-            background-color: #102744;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        a {
-            overflow-wrap: anywhere;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 29px;
-            }
-
-            section {
-                padding: 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A personal digital portfolio documenting academic development, skills and career preparation.">
+  <title>Atang | Digital Portfolio</title>
+  <style>
+    :root {
+      --navy: #172554;
+      --purple: #6d28d9;
+      --pink: #ec4899;
+      --teal: #0f9f9a;
+      --gold: #f59e0b;
+      --ink: #263247;
+      --muted: #64748b;
+      --paper: #ffffff;
+      --bg: #f5f3ff;
+      --line: #e5e7eb;
+    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink);
+      background: linear-gradient(135deg, #f5f3ff 0%, #eff6ff 48%, #fdf2f8 100%);
+      line-height: 1.7;
+    }
+    .hero {
+      color: white; text-align: center; padding: 68px 20px 54px;
+      background: linear-gradient(120deg, #172554 0%, #6d28d9 52%, #db2777 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero:after {
+      content: ""; position: absolute; width: 280px; height: 280px; border-radius: 50%;
+      background: rgba(255,255,255,.09); right: -70px; top: -110px;
+    }
+    .hero .eyebrow { text-transform: uppercase; letter-spacing: 3px; font-size: .78rem; font-weight: bold; }
+    .hero h1 { font-size: clamp(2.1rem, 6vw, 3.6rem); margin: 10px 0; line-height: 1.15; }
+    .hero p { max-width: 720px; margin: 10px auto; color: #f3e8ff; }
+    .hero .tag {
+      display: inline-block; margin-top: 18px; padding: 8px 16px; border-radius: 30px;
+      background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.35);
+    }
+    .menu-wrap {
+      position: sticky; top: 0; z-index: 10; background: rgba(23,37,84,.97);
+      padding: 12px 14px; box-shadow: 0 5px 18px rgba(15,23,42,.18);
+    }
+    .menu { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; max-width: 1200px; margin: auto; }
+    .menu button {
+      border: 1px solid rgba(255,255,255,.3); color: white; background: transparent;
+      padding: 9px 14px; border-radius: 22px; font-weight: bold; cursor: pointer;
+      font-size: .88rem; transition: .2s ease;
+    }
+    .menu button:hover, .menu button:focus-visible, .menu button.active {
+      background: white; color: var(--navy); outline: none; transform: translateY(-1px);
+    }
+    main { width: min(1000px, calc(100% - 32px)); margin: 32px auto 60px; }
+    section {
+      background: var(--paper); margin: 24px 0; padding: clamp(22px, 4vw, 38px);
+      border-radius: 20px; box-shadow: 0 8px 28px rgba(30,41,59,.08);
+      border-top: 5px solid var(--purple); scroll-margin-top: 100px;
+    }
+    section:nth-of-type(3n+2) { border-top-color: var(--pink); }
+    section:nth-of-type(3n) { border-top-color: var(--teal); }
+    h2 { color: var(--navy); margin-top: 0; font-size: 1.8rem; }
+    h3 { color: #5b21b6; margin-bottom: 6px; }
+    .intro { font-size: 1.08rem; }
+    .small-note { color: var(--muted); font-size: .92rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
+    .chip { background: #ede9fe; color: #5b21b6; padding: 6px 12px; border-radius: 20px; font-size: .88rem; font-weight: bold; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .tile { padding: 18px; border-radius: 14px; background: #f8fafc; border: 1px solid var(--line); }
+    .tile.pink { background: #fff1f2; border-color: #fecdd3; }
+    .tile.teal { background: #f0fdfa; border-color: #99f6e4; }
+    .tile.gold { background: #fffbeb; border-color: #fde68a; }
+    .stage { border-left: 4px solid var(--pink); padding: 4px 0 4px 18px; margin: 18px 0; }
+    .stage:nth-child(even) { border-left-color: var(--teal); }
+    .cv-heading { color: var(--purple); letter-spacing: .5px; text-transform: uppercase; font-size: .9rem; }
+    .document-text { background: #fafafa; border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+    .resource-link { color: #6d28d9; font-weight: bold; }
+    footer { text-align: center; color: #e0e7ff; background: #172554; padding: 26px 16px; }
+    .back-top { display: inline-block; margin-top: 12px; color: white; }
+    @media (max-width: 650px) {
+      .menu-wrap { position: static; }
+      .menu { justify-content: flex-start; }
+      .menu button { font-size: .82rem; padding: 8px 11px; }
+      main { width: min(100% - 22px, 1000px); margin-top: 18px; }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="hero" id="top">
+    <div class="eyebrow">Personal digital portfolio · 2026/2027</div>
+    <h1>Learning, Growing & Building My Future</h1>
+    <p class="intro">Welcome to my digital portfolio. This page documents my academic journey, developing skills, experiences and preparation for future workplace opportunities.</p>
+    <div class="tag">BSc Business Intelligence &amp; Data Analytics · BAC</div>
+  </header>
 
-    <header>
-        <h1>My Digital Portfolio</h1>
-        <p>Learning, Growing and Preparing for My Future</p>
-        <p>Business Intelligence and Data Analytics Student</p>
-    </header>
-
-    <nav aria-label="Main navigation">
-        <a href="#about">About Me</a>
-        <a href="#cv">My CV</a>
-        <a href="#journey">My Journey</a>
-        <a href="#group">Group Work</a>
-        <a href="#skills">Skills & Projects</a>
-        <a href="#letter">Application Letter</a>
-        <a href="#email">Email Template</a>
+  <div class="menu-wrap">
+    <nav class="menu" aria-label="Portfolio main menu">
+      <button class="active" data-target="about">About Me</button>
+      <button data-target="cv">My CV</button>
+      <button data-target="journey">Academic Journey</button>
+      <button data-target="group">Group Work</button>
+      <button data-target="skills">Skills &amp; Projects</button>
+      <button data-target="letter">Application Letter</button>
+      <button data-target="email">Email Template</button>
+      <button data-target="study">Study Tips</button>
     </nav>
+  </div>
 
-    <main>
+  <main>
+    <section id="about">
+      <h2>01 · About Me</h2>
+      <p class="intro">Hello and welcome! My name is <strong>Atang Cetrida Kerekang</strong>, and I am a BSc Business Intelligence and Data Analytics student at the Botswana School of Business Sciences (BAC).</p>
+      <p>I am a motivated and hardworking student with interests in data, technology, business, debate, poetry, crocheting and astronomy. I enjoy learning, exploring ideas and developing skills that can help me contribute positively to an organisation.</p>
+      <p>My long-term goal is to build a career where I can use data to support better decision-making, improve organisational performance and contribute to innovation across industries.</p>
+      <div class="chips">
+        <span class="chip">Business Intelligence</span><span class="chip">Data Analytics</span>
+        <span class="chip">Technology</span><span class="chip">Critical Thinking</span>
+        <span class="chip">Lifelong Learning</span>
+      </div>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello and welcome to my digital portfolio!</p>
-            <p>
-                My name is [Your Name], and I am a first-year
-                Business Intelligence and Data Analytics student
-                at BAC. I am developing my knowledge of data,
-                technology, business and professional communication.
-            </p>
-            <p>
-                My interests include [your interests]. My goal is
-                to build skills that will help me solve problems,
-                communicate effectively and contribute positively
-                to the workplace.
-            </p>
-        </section>
+    <section id="cv">
+      <h2>02 · Curriculum Vitae</h2>
+      <p class="small-note">A summary of my education, experience, skills and interests. Personal phone number and email have been left off this public page for privacy.</p>
+      <div class="document-text">
+        <h3>Atang Cetrida Kerekang</h3>
+        <p><strong>Professional profile</strong><br>
+        A motivated, hardworking person with communication, critical-thinking and teamwork skills. Eager to gain practical experience while contributing positively to an organisation and continuing to develop professionally. My long-term goal is to use data to support better decision-making, improve organisational performance and contribute to innovation across industries.</p>
 
-        <section id="cv">
-            <h2>My Curriculum Vitae</h2>
-            <h3>Personal Profile</h3>
-            <p>[Write a short professional introduction.]</p>
+        <h3 class="cv-heading">Areas of expertise</h3>
+        <div class="grid">
+          <div class="tile">Communication skills</div><div class="tile">Problem-solving skills</div>
+          <div class="tile">Critical thinking</div><div class="tile">Time management</div>
+          <div class="tile">Microsoft Word</div><div class="tile">Microsoft PowerPoint</div>
+          <div class="tile">Microsoft Excel</div><div class="tile">Microsoft Access</div>
+        </div>
 
-            <h3>Education</h3>
-            <p><strong>Current:</strong> BSc Business Intelligence
-            and Data Analytics, BAC — 2026/2027.</p>
-            <p><strong>Previous:</strong> [School and qualification.]</p>
+        <h3 class="cv-heading">Academic qualifications</h3>
+        <p><strong>Botswana School of Business Sciences</strong><br>
+        Bachelor of Science in Business Intelligence &amp; Data Analytics (2026–2030)</p>
+        <p><strong>Current modules:</strong> Communication and Study Skills; Fundamentals of Business Finance; Statistical Foundations for Data Analysis; Computer Technology.</p>
+        <p><strong>Seepapitso Senior Secondary School</strong><br>
+        Botswana General Certificate of Secondary Education (2024–2025)</p>
 
-            <h3>Experience</h3>
-            <p>[Include employment, job shadowing, volunteering
-            or relevant experience.]</p>
+        <h3 class="cv-heading">Noteworthy accomplishments</h3>
+        <ul><li>Held a leadership role as House Captain at senior school.</li><li>Was an active participant in Seepapitso Debate Club.</li></ul>
 
-            <h3>Skills</h3>
-            <ul>
-                <li>Communication and teamwork</li>
-                <li>Microsoft Office and digital literacy</li>
-                <li>[Add other skills you can demonstrate.]</li>
-            </ul>
+        <h3 class="cv-heading">Work experience</h3>
+        <p><strong>Intern – Lillie Willie Pre-School</strong><br>January 2026 – June 2026</p>
+        <ul>
+          <li>Assisted with administrative tasks, daily planning and organisational activities.</li>
+          <li>Observed the management and entrepreneurship skills involved in running a business.</li>
+          <li>Gained experience in customer service, staff coordination and meetings.</li>
+          <li>Obtained practical exposure to business operations.</li>
+        </ul>
 
-            <h3>Certifications</h3>
-            <p>[List relevant certificates, if any.]</p>
-        </section>
+        <h3 class="cv-heading">Hobbies and interests</h3>
+        <p>Attending hackathons · Debate · Poetry · Crocheting · Astronomy</p>
+      </div>
+    </section>
 
-        <section id="journey">
-            <h2>My Academic Journey</h2>
-            <p><em>[Add your reflective blog post of 300–600 words.]</em></p>
-            <p>
-                Reflect on your transition to tertiary education,
-                study habits, time management, challenges, achievements
-                and the lessons you are learning. Explain how your
-                experiences are influencing your personal and academic
-                development.
-            </p>
-            <p>
-                Replace these instructions with your own reflection,
-                using specific examples from your experience.
-            </p>
-        </section>
+    <section id="journey">
+      <h2>03 · My Academic Journey</h2>
+      <p class="small-note">A reflection on my transition from secondary education to tertiary learning.</p>
+      <p>Transitioning from secondary education to tertiary education introduced me to a different learning experience, both academically and personally. One of the significant challenges of my first semester was adjusting to the academic demands of tertiary education. Unlike secondary education, where one could simply memorise information, I found myself having to consistently practise and get a deeper understanding of concepts, which was fairly new to me. It also did not help that it takes time for me to grasp information, which affected my time-management skills, and I often procrastinated instead of doing schoolwork.</p>
+      <p>This led to many sleepless nights trying to catch up on modules such as Statistical Foundations for Data Analytics and Fundamentals of Business Finance, which require deep understanding. Not to mention Computer Technology, which required independent exploration and practical application.</p>
+      <p>This experience made me recognise the importance of developing good study habits. I began to understand that relying exclusively on classroom explanations was insufficient and that independent studying was essential. This included revisiting lecture notes right after the lecture, doing active recall (practice questions, blurting and the Feynman technique) instead of passive learning, and seeking clarification when concepts were difficult. I also learned to prioritise my responsibilities, plan ahead and avoid unnecessary procrastination, which improved my time management.</p>
+      <p>Beyond academics, my experience in tertiary education has contributed towards my personal development. I have become more open to learning from my mistakes instead of trying to erase them and recognised that encountering different concepts does not indicate an inability to understand them or failure, but rather an opportunity to improve through practice and consistent effort. This has encouraged me to approach my academic challenges with a more positive and growth-oriented mindset.</p>
+      <p>As I continue my academic journey, I intend to strengthen my study routines, improve my time management and become more confident in applying theoretical knowledge to practical situations.</p>
+    </section>
 
-        <section id="group">
-            <h2>My Group Work Experience</h2>
-            <p>
-                <em>[Write your personal reflection on group work.]</em>
-            </p>
-            <ul>
-                <li><strong>Forming:</strong> How the group was formed.</li>
-                <li><strong>Storming:</strong> Challenges or disagreements.</li>
-                <li><strong>Norming:</strong> How shared expectations developed.</li>
-                <li><strong>Performing:</strong> How the group completed its work.</li>
-                <li><strong>Adjourning:</strong> How the experience concluded.</li>
-            </ul>
-            <p>
-                Explain what you learned about communication,
-                teamwork, responsibility and conflict management.
-                Use honest examples from your own group experience.
-            </p>
-        </section>
+    <section id="group">
+      <h2>04 · My Group Work Experience</h2>
+      <p class="small-note">Reflecting on the group's development through Tuckman's five stages.</p>
+      <div class="stage">
+        <h3>Forming stage</h3>
+        <p>During our first tutorial class for Communication and Study Skills, a random selection of around six of my course mates were placed in front of us and instructed to pick five or six people to form a complete group. I was chosen by one of my course mates, Bothe Mogano, and along with me he picked Katso Modisenyane, Ruth Monamati and Bame Oageng. We were then given the task of completing group work. Upon completing the assignment, we noticed that Bothe and Katso were quite fond of each other, but for the rest of us, it was quite awkward because we were not familiar with each other. After the group work, Bothe and Katso left, and Ruth, Bame and I remained. We took it as an opportunity to get to know each other and started conversing about our backgrounds, interests and hobbies. As we progressed with other group tasks, we became more acquainted with each other's working styles, ethics, expectations and communication skills.</p>
+      </div>
+      <div class="stage">
+        <h3>Storming stage</h3>
+        <p>As we progressed with other group tasks, we became more acquainted with each other's working styles, ethics, expectations and communication skills. This also meant that we encountered differences in opinions, communication difficulties and the coordination of individual responsibilities. Although we had a common goal of completing the group work, I found understanding our group leader, Bothe Mogano, quite complicated. We often found ourselves misunderstanding each other, which could lead to friction and tension in the group because members would sometimes have to intervene and try to resolve the issue. We also encountered communication difficulties, especially when arranging physical meet-ups to discuss the work. There was often confusion about when and where we were meeting.</p>
+      </div>
+      <div class="stage">
+        <h3>Norming stage</h3>
+        <p>As we continued working together, we gradually developed a better understanding of how to cooperate. We began organising our responsibilities and establishing expectations for completing the work. Communication improved, and members became more comfortable sharing their opinions and asking questions. This stage helped us develop trust and understand the importance of respecting each member's contribution.</p>
+      </div>
+      <div class="stage">
+        <h3>Performing stage</h3>
+        <p>At this point, members worked on their assigned responsibilities and contributed towards achieving a common goal. Since the group work contributed to everyone's final mark, no one was lagging behind. We split each task according to everyone's strengths. I was given the task of creating and organising the slides because of my technical skills. Bothe was given the role of chairperson; he arranged meetings and ensured everyone did their work because he was more outspoken. Bame was given the role of secretary, helping Bothe plan meetings, creating the agenda and writing meeting minutes because she was a great observer. Katso was the researcher, making extensive research on the topics we were given and reporting back to us because he was organised. Ruth was the presenter, responsible for introducing the topic and communicating most of the information to the audience.</p>
+      </div>
+      <div class="stage">
+        <h3>Adjourning stage</h3>
+        <p>Our group managed to complete and submit the group work in due time because we worked together and cooperated. Looking back, I learned that disagreements must be approached constructively and that members need to listen to one another, communicate openly and remain focused on the group's overall goal.</p>
+      </div>
+    </section>
 
-        <section id="skills">
-            <h2>Skills and Projects</h2>
+    <section id="skills">
+      <h2>05 · Skills and Projects</h2>
+      <p>These are skills I am developing through my studies and practical work. I will continue adding examples and screenshots as my projects progress.</p>
+      <div class="grid">
+        <div class="tile pink">
+          <h3>Microsoft Excel</h3>
+          <p>Developing skills in organising data, carrying out calculations and presenting information through charts and tables.</p>
+          <p><strong>Evidence to add:</strong> A screenshot of an Excel spreadsheet or chart created for coursework.</p>
+        </div>
+        <div class="tile teal">
+          <h3>Microsoft Access</h3>
+          <p>Learning how to structure databases, create tables and work with queries, forms and reports.</p>
+          <p><strong>Evidence to add:</strong> A screenshot of the retail database assignment or one of its forms.</p>
+        </div>
+        <div class="tile gold">
+          <h3>Presentation and communication</h3>
+          <p>Developing professional communication and presentation skills through coursework and group collaboration.</p>
+          <p><strong>Evidence to add:</strong> A slide from a group presentation that you helped create.</p>
+        </div>
+      </div>
+    </section>
 
-            <h3>1. Microsoft Access</h3>
-            <p>
-                <strong>Skill:</strong> Database design and management.
-                <br>
-                <strong>Project:</strong> [Describe your database
-                assignment and what you learned.]
-            </p>
+    <section id="letter">
+      <h2>06 · Application Letter</h2>
+      <div class="document-text">
+        <p><strong>Atang Cetrida Kerekang</strong><br>Gaborone, Botswana<br>10 November 2026</p>
+        <p>The Human Resource Manager<br>Botswana School of Business Sciences<br>Gaborone, Botswana</p>
+        <p><strong>RE: APPLICATION FOR INDUSTRIAL ATTACHMENT</strong></p>
+        <p>Dear Hiring Manager,</p>
+        <p>I am writing to express my interest in an industrial attachment opportunity at Botswana School of Business Sciences. I am currently pursuing a Bachelor of Science in Business Intelligence and Data Analytics at this very same institution, where I am developing academic knowledge and practical skills in business, information technology and data analysis.</p>
+        <p>Through my academic studies, I have gained an understanding of fundamental concepts in Statistics, Business Finance, Computer Technology and Communication Skills through classes. In addition to my academic knowledge, I am developing skills in Microsoft Excel, Database Management, information processing and professional communication. I consider myself a responsible, adaptable and motivated individual who is willing to learn, collaborate with others and take on new challenges.</p>
+        <p>I am particularly interested in undertaking my attachment at Botswana School of Business Sciences because it would allow me to gain exposure to the operational and technological environment of an established higher education institution.</p>
+        <p>I would appreciate your consideration of my application and would look forward to your response. Thank you for your time and consideration.</p>
+        <p>Yours faithfully,<br><strong>Atang Cetrida Kerekang</strong></p>
+      </div>
+    </section>
 
-            <h3>2. Microsoft Excel</h3>
-            <p>
-                <strong>Skill:</strong> Working with data and charts.
-                <br>
-                <strong>Project:</strong> [Describe a spreadsheet,
-                calculation or chart you created.]
-            </p>
+    <section id="email">
+      <h2>07 · Professional Email Template</h2>
+      <div class="document-text">
+        <p><strong>To:</strong> Human Resource Manager</p>
+        <p><strong>Subject:</strong> Application for Industrial Attachment</p>
+        <p>Dear Hiring Manager,</p>
+        <p>I hope this email finds you well.</p>
+        <p>I am writing to submit my application for an industrial attachment opportunity at your organisation. I am currently pursuing a Bachelor of Science in Business Intelligence and Data Analytics at the Botswana School of Business Sciences.</p>
+        <p>Please find my CV and application letter attached for your consideration. I would appreciate the opportunity to gain practical experience and further develop my skills in a professional environment.</p>
+        <p>Thank you for your time and consideration. I look forward to your response.</p>
+        <p>Kind regards,<br>Atang Cetrida Kerekang</p>
+      </div>
+    </section>
 
-            <h3>3. Communication and Presentation</h3>
-            <p>
-                <strong>Skill:</strong> Written communication
-                and presenting information.
-                <br>
-                <strong>Project:</strong> [Describe a presentation
-                or group project you contributed to.]
-            </p>
-        </section>
+    <section id="study">
+      <h2>08 · Study Tips and Resources</h2>
+      <p>University life requires more than attending lectures and completing assignments. It requires discipline, effective time management, independent learning and the ability to use appropriate academic resources. As a first-year student at BAC, I have learned the importance of developing good study habits that support academic performance and personal growth.</p>
+      <p>This section shares practical study tips and learning resources that can help students become more organised, productive and confident in their academic journey.</p>
+      <div class="grid">
+        <div class="tile pink"><h3>1. Manage your time effectively</h3><p>Create a weekly study timetable. Allocate enough time for lectures, assignments, revision and personal activities. Avoid waiting until the last minute to complete academic tasks.</p></div>
+        <div class="tile teal"><h3>2. Take organised lecture notes</h3><p>Record important concepts, definitions and examples during lectures. Review and organise your notes after class to improve understanding and make revision easier.</p></div>
+        <div class="tile gold"><h3>3. Practise active learning</h3><p>Do not rely entirely on reading notes. Test yourself using practice questions, explain concepts in your own words and attempt exercises without looking at the answers.</p></div>
+        <div class="tile pink"><h3>4. Participate in group discussions</h3><p>Work with classmates to discuss difficult topics, exchange ideas and explain concepts to one another. Ensure group discussions remain focused and productive.</p></div>
+        <div class="tile teal"><h3>5. Use academic resources</h3><p>Supplement lecture notes with textbooks, academic journals and reliable educational websites. Always evaluate the credibility of information before using it in assignments.</p></div>
+        <div class="tile gold"><h3>6. Ask questions and seek assistance</h3><p>Do not ignore concepts you find difficult. Consult lecturers, tutors or classmates when you need clarification. Asking questions is an important part of independent learning.</p></div>
+      </div>
+      <h3>Recommended learning resources</h3>
+      <div class="grid">
+        <div class="tile"><h3>Google Scholar</h3><p>Helps students find academic articles, research papers and scholarly publications for assignments and research.</p><a class="resource-link" href="https://scholar.google.com/" target="_blank" rel="noopener">Visit Google Scholar</a></div>
+        <div class="tile"><h3>Educational YouTube channels</h3><p>Video lessons can explain difficult concepts through demonstrations and visual examples. Examples include Cognito and The Organic Chemistry Tutor.</p><a class="resource-link" href="https://www.youtube.com/" target="_blank" rel="noopener">Visit YouTube</a></div>
+      </div>
+    </section>
+  </main>
 
-        <section id="letter">
-            <h2>Application Letter</h2>
-            <p>[Your Address or Contact Details, if appropriate]</p>
-            <p>[Date]</p>
-            <p>
-                The Hiring Manager<br>
-                [Organisation Name]
-            </p>
-            <p><strong>RE: Application for Industrial Attachment</strong></p>
-            <p>Dear Hiring Manager,</p>
-            <p>
-                [Introduce yourself, state the purpose of your
-                application, explain your relevant skills and
-                interest in the organisation, and request consideration
-                for industrial attachment.]
-            </p>
-            <p>Yours faithfully,</p>
-            <p>[Your Name]</p>
-        </section>
+  <footer>
+    <p><strong>Atang's Digital Portfolio</strong> · 2026/2027</p>
+    <p>Learning today, preparing for tomorrow.</p>
+    <a class="back-top" href="#top">Back to top ↑</a>
+  </footer>
 
-        <section id="email">
-            <h2>Professional Email Template</h2>
-            <p><strong>To:</strong> [Recipient's email address]</p>
-            <p><strong>Subject:</strong> Application for Industrial Attachment</p>
-            <p>Dear [Recipient's Name],</p>
-            <p>
-                I am writing to express my interest in an industrial
-                attachment opportunity at your organisation.
-                I am currently studying Business Intelligence and
-                Data Analytics at BAC.
-            </p>
-            <p>
-                Please find my CV and application letter attached
-                for your consideration. I would appreciate the
-                opportunity to discuss my application.
-            </p>
-            <p>Thank you for your time and consideration.</p>
-            <p>Kind regards,<br>[Your Name]</p>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>My Digital Portfolio | 2026/2027</p>
-        <p>Learning today, preparing for tomorrow.</p>
-    </footer>
-
+  <script>
+    const menuButtons = document.querySelectorAll(".menu button");
+    menuButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const section = document.getElementById(button.dataset.target);
+        if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+        menuButtons.forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+      });
+    });
+  </script>
 </body>
 </html>
