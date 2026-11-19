@@ -85,6 +85,47 @@
       .menu button { font-size: .82rem; padding: 8px 11px; }
       main { width: min(100% - 22px, 1000px); margin-top: 18px; }
     }
+  .project-card {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-left: 5px solid #17365d;
+}
+
+.project-card h3 {
+    color: #17365d;
+    margin-bottom: 15px;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    margin: 15px auto;
+}
+
+.project-category {
+    color: #8e44ad;
+    font-weight: bold;
+}
+
+.project-link {
+    display: inline-block;
+    background: #17365d;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.project-link:hover {
+    background: #8e44ad;
+}
   </style>
 </head>
 <body>
@@ -204,25 +245,42 @@
     </section>
 
     <section id="skills">
-      <h2>05 · Skills and Projects</h2>
-      <p>These are skills I am developing through my studies and practical work. I will continue adding examples and screenshots as my projects progress.</p>
-      <div class="grid">
-        <div class="tile pink">
-          <h3>Microsoft Excel</h3>
-          <p>Developing skills in organising data, carrying out calculations and presenting information through charts and tables.</p>
-          <p><strong>Evidence to add:</strong> A screenshot of an Excel spreadsheet or chart created for coursework.</p>
-        </div>
-        <div class="tile teal">
-          <h3>Microsoft Access</h3>
-          <p>Learning how to structure databases, create tables and work with queries, forms and reports.</p>
-          <p><strong>Evidence to add:</strong> A screenshot of the retail database assignment or one of its forms.</p>
-        </div>
-        <div class="tile gold">
-          <h3>Presentation and communication</h3>
-          <p>Developing professional communication and presentation skills through coursework and group collaboration.</p>
-          <p><strong>Evidence to add:</strong> A slide from a group presentation that you helped create.</p>
-        </div>
-      </div>
+      <div class="project-card">
+
+    <h3>Scam or Slay? – Hackathon Project</h3>
+
+    <img src="images/hackathon-team.jpg"
+         alt="Students collaborating during a hackathon"
+         class="project-image">
+
+    <p class="project-category">Hackathon Project</p>
+
+    <p>
+        Participated in a hackathon focused on developing
+        innovative digital solutions. Scam or Slay is an
+        interactive digital awareness project designed to
+        help users identify fraudulent messages and
+        distinguish scams from safe messages.
+    </p>
+
+    <p><strong>Skills demonstrated:</strong></p>
+
+    <ul>
+        <li>Teamwork and collaboration</li>
+        <li>Problem-solving</li>
+        <li>Digital literacy</li>
+        <li>Creative thinking</li>
+        <li>Communication</li>
+    </ul>
+
+    <a href="https://aaltii.github.io/Scam-or-Slay/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="project-link">
+        Explore Scam or Slay
+    </a>
+
+</div>
     </section>
 
     <section id="letter">
