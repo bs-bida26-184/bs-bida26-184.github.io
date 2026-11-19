@@ -207,7 +207,44 @@
     color: var(--navy);
     margin: 35px 0 15px;
 }
-</style>
+
+/* GROUP WORK PHOTO GALLERY */
+
+.group-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.group-photo {
+    background: white;
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.group-photo img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.group-photo p {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 650px) {
+    .group-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+  </style>
 </head>
 <body>
   <header class="hero" id="top">
@@ -323,6 +360,34 @@
         <h3>Adjourning stage</h3>
         <p>Our group managed to complete and submit the group work in due time because we worked together and cooperated. Looking back, I learned that disagreements must be approached constructively and that members need to listen to one another, communicate openly and remain focused on the group's overall goal.</p>
       </div>
+      
+<h3>Our Group Work Experience</h3>
+
+<p>
+    These photographs capture moments from our group
+    work experience, highlighting collaboration,
+    communication and teamwork throughout our activities.
+</p>
+
+<div class="group-gallery">
+
+    <div class="group-photo">
+        <a href="group-work-1.jpg" target="_blank">
+            <img src="group-work-1.jpg"
+                 alt="Our group working together">
+        </a>
+        <p>Our Group Collaboration</p>
+    </div>
+
+    <div class="group-photo">
+        <a href="group-work-2.jpg" target="_blank">
+            <img src="group-work-2.jpg"
+                 alt="Group members participating in an activity">
+        </a>
+        <p>Our Group Work Experience</p>
+    </div>
+
+</div>
     </section>
 
     <section id="skills">
