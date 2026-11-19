@@ -126,7 +126,88 @@
 .project-link:hover {
     background: #8e44ad;
 }
-  </style>
+  
+/* SKILLS AND PROJECT SHOWCASE */
+
+.skills-intro {
+    text-align: center;
+    margin: 20px auto 35px;
+    max-width: 750px;
+}
+
+.project-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.showcase-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.showcase-card:hover {
+    transform: translateY(-5px);
+}
+
+.showcase-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #f5f3ff;
+    display: block;
+}
+
+.showcase-content {
+    padding: 22px;
+}
+
+.showcase-content h3 {
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.project-label {
+    color: var(--purple);
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.showcase-content ul {
+    padding-left: 20px;
+}
+
+.showcase-content li {
+    margin-bottom: 5px;
+}
+
+.project-button {
+    display: inline-block;
+    background: var(--navy);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.project-button:hover {
+    background: var(--purple);
+}
+
+.skills-heading {
+    color: var(--navy);
+    margin: 35px 0 15px;
+}
+</style>
 </head>
 <body>
   <header class="hero" id="top">
@@ -245,40 +326,149 @@
     </section>
 
     <section id="skills">
-      <div class="project-card">
-
-    <h3>Scam or Slay? – Hackathon Project</h3>
-
-    <img src="hackathon-team.jpg"
-     alt="Our hackathon team"
-     class="project-image">
-
-    <p class="project-category">Hackathon Project</p>
+      
+      
+<div class="skills-intro">
+    <h2>My Skills & Projects</h2>
 
     <p>
-        Participated in a hackathon focused on developing
-        innovative digital solutions. Scam or Slay is an
-        interactive digital awareness project designed to
-        help users identify fraudulent messages and
-        distinguish scams from safe messages.
+        Throughout my Business Intelligence and Data Analytics
+        studies, I have developed practical technical skills
+        through coursework, collaborative projects and
+        technology-based activities.
     </p>
+</div>
 
-    <p><strong>Skills demonstrated:</strong></p>
+<h2 class="skills-heading">Featured Technical Projects</h2>
 
-    <ul>
-        <li>Teamwork and collaboration</li>
-        <li>Problem-solving</li>
-        <li>Digital literacy</li>
-        <li>Creative thinking</li>
-        <li>Communication</li>
-    </ul>
+<div class="project-showcase">
 
-    <a href="https://aaltii.github.io/Scam-or-Slay/"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="project-link">
-        Explore Scam or Slay
-    </a>
+    <!-- MICROSOFT ACCESS PROJECT -->
+
+    <div class="showcase-card">
+
+        <a href="access-project.png" target="_blank">
+            <img src="access-project.png"
+                 alt="Top Stretch Retailers Access database main menu">
+        </a>
+
+        <div class="showcase-content">
+
+            <p class="project-label">Database Management</p>
+
+            <h3>Microsoft Access – Top Stretch Retailers</h3>
+
+            <p>
+                Developed a database management system for
+                Top Stretch Retailers to organise customer,
+                employee, inventory and sales information.
+            </p>
+
+            <strong>Skills demonstrated:</strong>
+
+            <ul>
+                <li>Database table creation</li>
+                <li>Forms and data entry</li>
+                <li>Queries and information retrieval</li>
+                <li>Report generation</li>
+                <li>Interactive database navigation</li>
+            </ul>
+
+            <a href="access-project.png"
+               target="_blank"
+               class="project-button">
+                View Access Screenshot
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- MICROSOFT EXCEL PROJECT -->
+
+    <div class="showcase-card">
+
+        <a href="excel-project.png" target="_blank">
+            <img src="excel-project.png"
+                 alt="Weekly rainfall analysis in Microsoft Excel">
+        </a>
+
+        <div class="showcase-content">
+
+            <p class="project-label">Data Analysis</p>
+
+            <h3>Microsoft Excel – Rainfall Analysis</h3>
+
+            <p>
+                Used Microsoft Excel to organise and analyse
+                weekly rainfall data for Golema-Mmidi.
+                The project involved calculating statistical
+                measurements and presenting findings visually.
+            </p>
+
+            <strong>Skills demonstrated:</strong>
+
+            <ul>
+                <li>SUM, MIN, MAX and AVERAGE functions</li>
+                <li>Data organisation</li>
+                <li>Statistical calculations</li>
+                <li>Column chart creation</li>
+                <li>Data interpretation</li>
+            </ul>
+
+            <a href="excel-project.png"
+               target="_blank"
+               class="project-button">
+                View Excel Screenshot
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- HACKATHON PROJECT -->
+
+    <div class="showcase-card">
+
+        <a href="hackathon-team.jpg" target="_blank">
+            <img src="hackathon-team.jpg"
+                 alt="Team collaborating during the hackathon">
+        </a>
+
+        <div class="showcase-content">
+
+            <p class="project-label">Hackathon Project</p>
+
+            <h3>Scam or Slay</h3>
+
+            <p>
+                Participated in a hackathon involving the
+                development of an interactive digital awareness
+                project that helps users identify fraudulent
+                messages and distinguish scams from safe messages.
+            </p>
+
+            <strong>Skills demonstrated:</strong>
+
+            <ul>
+                <li>Teamwork and collaboration</li>
+                <li>Problem-solving</li>
+                <li>Creative thinking</li>
+                <li>Digital literacy</li>
+                <li>Communication</li>
+            </ul>
+
+            <a href="https://aaltii.github.io/Scam-or-Slay/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                Explore Scam or Slay
+            </a>
+
+        </div>
+    </div>
+
+</div>
 
 </div>
     </section>
