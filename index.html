@@ -244,6 +244,27 @@
         grid-template-columns: 1fr;
     }
 }
+  .profile-photo {
+    width: 220px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 4px solid var(--purple);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 250px;
+}
   </style>
 </head>
 <body>
@@ -285,6 +306,25 @@
         <span class="chip">Technology</span><span class="chip">Critical Thinking</span>
         <span class="chip">Lifelong Learning</span>
       </div>
+      <div class="about-content">
+
+    <img src="my-profile.png"
+         alt="Photograph of me"
+         class="profile-photo">
+
+    <div class="about-text">
+        <h2>About Me</h2>
+
+        <p>
+            My name is Atang. I am a Business Intelligence
+            and Data Analytics student at BAC.
+            I am passionate about learning, developing
+            new skills and exploring opportunities
+            in technology and data.
+        </p>
+    </div>
+
+</div>
     </section>
 
     <section id="cv">
